@@ -37,4 +37,10 @@ impl Database {
         let data = serde_json::to_string(&self.data).expect("Something went wrong serializing the data");
         fs::write(&self.filename, data).expect("Something went wrong writing the data");
     }
+    #[allow(dead_code)]
+    pub fn exit(&self) {
+        if self.save_on_exit {
+            self.save();
+        }
+
 }
