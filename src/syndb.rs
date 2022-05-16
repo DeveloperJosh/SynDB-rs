@@ -42,5 +42,6 @@ impl Database {
         if self.save_on_exit {
             self.save();
         }
+    }
 
 }
